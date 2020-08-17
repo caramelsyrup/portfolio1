@@ -1,0 +1,6 @@
+$(document).ready(function(){
+	// 게시글리스트에서 글쓰기버튼
+	$("#boardinsertBtn").click(function(){
+		
+	});
+});

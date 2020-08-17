@@ -1,0 +1,8 @@
+$(document).ready(function(){
+	// 게시글리스트에서 글쓰기버튼
+	$("#boardinsertBtn").click(function(){
+		//get방식으로 단순히 이동.
+		location.href="boardInsert.do";
+	});
+	
+});

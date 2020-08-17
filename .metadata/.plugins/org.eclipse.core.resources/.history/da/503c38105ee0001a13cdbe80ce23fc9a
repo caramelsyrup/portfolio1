@@ -1,0 +1,21 @@
+$(document).ready(function(){
+	// 게시글리스트에서 글쓰기버튼
+	$("#boardinsertBtn").click(function(){
+		//get방식으로 단순히 이동.
+		location.href="boardInsert.do";
+	});
+	
+	// 게시글 쓰기 폼에서 작성완료
+	$("#boardInsertBtn").click(function(){
+		if($("#subject").val()==""){
+			alert('제목을 입력하세요.');
+			$("#subject").focus();
+			return false;
+		}
+		if($('textarea[name=limit]')){
+			
+		}
+	});
+	
+	
+});

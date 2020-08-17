@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
+<div id="welcome">
+	<h2>예약 확인 정보</h2>
+</div>
+<div id="one-column">
+	<div id="content">
+		<input ty name="attendNumber">${population}
+		<h2>${memberinfo.userid}</h2>
+		<h2>${memberinfo.username}</h2>
+		<h2>${eventinfo.eventname}</h2>
+		<h2>${eventinfo.eventsche}</h2>
+		<h2>${eventinfo.eventlocation}</h2>
+		<input type="button" class="allbutton" value="결정" id="confirmattendBtn">
+		<input type="button" class="allbutton" value="취소" id="canceladttendBtn">
+	</div>
+</div>
+
+<%@ include file="../include/footer.jsp"%>

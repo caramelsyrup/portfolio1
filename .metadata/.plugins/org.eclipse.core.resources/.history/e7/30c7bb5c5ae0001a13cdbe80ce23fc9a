@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>    
+<div id="welcome">
+	<h2>게시글 작성</h2>
+</div>
+	<div id="one-column">
+		<div id="content">
+				<h2>${writter}님 반갑습니다.</h2>
+				<form action="boardInsert.do" id="memberUpdateform" method="post">
+				<ul class="list-style">
+					<li>							
+						<label>아이디 : </label>
+						<input type="text" value="${writter}" readonly="readonly" name="buserid" id ="buserid" size=8>
+					</li>
+					<li>							
+						<label>게시글 제목 : </label>
+						<input type="text" name="subject" size=20>
+					</li>
+					<li>							
+						<label>게시글 내용 : </label>
+						<input type="text" value="${memberDetail.username}" name="upusername" size=5>
+					</li>
+					<li>							
+						<label>연락처 : </label>
+						<input type="text" value="${memberDetail.usertel}" name="upusertel" size=8>
+						
+					</li>
+					<li>							
+						<label>이메일 : </label>
+						<input type="text" value="${memberDetail.useremail}" name="upuseremail">
+						
+					</li>
+					<li>							
+						<label>우편번호 : </label>
+						<input type="text" value="${memberDetail.userzipcode}" name="upuserzipcode" size=4>
+					</li>
+					<li>						
+						<label>주소 : </label>
+						<input type="text" value="${memberDetail.useraddr}" name="upuseraddr" size=50>
+					</li>
+				</ul>
+				<c:if test="${sessionScope.grade==1}">
+					<input type="button" class="allbutton" value="회원목록" id="listmemberBtn">
+				</c:if>
+				<input type="button" class="allbutton" value="수정하기" id="updatememberBtn">
+				<input type="button" class="allbutton" value="회원탈퇴" id="deletememberBtn">
+				</form>
+		</div>
+	</div>
+<%@ include file="../include/footer.jsp"%>

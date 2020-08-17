@@ -1,0 +1,6 @@
+package com.board.model;
+
+public class BoardDTO {
+	private int bnum;
+	private String 
+}

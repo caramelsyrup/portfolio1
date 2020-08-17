@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
+<div id="welcome">
+	<h2>고객님 예약 상태</h2>
+</div>
+<div id="one-column">
+	<div id="content">
+		
+		<input type="button" class="allbutton" value="결정" id="">
+		<input type="button" class="allbutton" value="취소" id="canceladdtendBtn">
+	</div>
+</div>
+
+<%@ include file="../include/footer.jsp"%>

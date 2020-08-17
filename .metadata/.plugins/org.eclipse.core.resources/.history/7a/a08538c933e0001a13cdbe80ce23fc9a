@@ -1,0 +1,52 @@
+package com.attendance.model;
+
+public class AttendanceViewDTO {
+	private int population,renum;
+	private String eventname,eventsche,eventlocation,userid,username;
+	
+	public int getPopulation() {
+		return population;
+	}
+	public void setPopulation(int population) {
+		this.population = population;
+	}
+	public int getRenum() {
+		return renum;
+	}
+	public void setRenum(int renum) {
+		this.renum = renum;
+	}
+	public String getEventname() {
+		return eventname;
+	}
+	public void setEventname(String eventname) {
+		this.eventname = eventname;
+	}
+	public String getEventsche() {
+		return eventsche;
+	}
+	public void setEventsche(String eventsche) {
+		this.eventsche = eventsche;
+	}
+	public String getEventlocation() {
+		return eventlocation;
+	}
+	public void setEventlocation(String eventlocation) {
+		this.eventlocation = eventlocation;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	
+	
+}

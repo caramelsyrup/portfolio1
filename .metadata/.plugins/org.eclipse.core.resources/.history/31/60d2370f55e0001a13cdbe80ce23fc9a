@@ -1,0 +1,6 @@
+package com.board.model;
+
+public class BoardDTO {
+	private int bnum,readcount;
+	private String userid,subject,content,reg_date;
+}
