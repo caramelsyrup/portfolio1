@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Mon Aug 17 18:46:35 KST 2020
+#Tue Aug 18 16:07:32 KST 2020
 org.eclipse.jst.j2ee.server\:jstl-1.2=WEB-INF/lib/jstl-1.2.jar
 org.eclipse.jst.j2ee.server\:ojdbc6_g=WEB-INF/lib/ojdbc6_g.jar
 org.eclipse.jst.j2ee.server\:json-simple-1.1.1=WEB-INF/lib/json-simple-1.1.1.jar

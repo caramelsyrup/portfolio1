@@ -7,12 +7,12 @@
 <fullyQualifiedTypeName name="com.attendance.model.AttendanceDAOImpl"/>
 <fullyQualifiedTypeName name="com.attendance.model.AttendanceViewDTO"/>
 <fullyQualifiedTypeName name="com.board.model.BoardDAO"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.board.model.BoardDAOImpl"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.board.model.BoardDTO"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>
