@@ -3,10 +3,6 @@
 	<name>Project1</name>
 	<comment></comment>
 	<projects>
-		<project>jstl-1.2</project>
-		<project>cos</project>
-		<project>ojdbc6_g</project>
-		<project>json-simple-1.1.1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

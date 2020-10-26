@@ -28,7 +28,7 @@ $(document).ready(function(){
 					location.href="main.do";
 				}else if(value.trim()==1){
 					alert("관리자.");
-					location.href="memberlist.do";
+					location.href="main.do";
 				}else if(value.trim()==2){
 					alert("암호가아닙니다.");
 				}
