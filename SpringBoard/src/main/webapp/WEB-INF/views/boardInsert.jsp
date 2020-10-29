@@ -1,13 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-</head>
-<body>
 	<form action="boardInsert" method="post">
 	  <div class="form-group">
 	    <label for="TitleForInsert">제목(Title)</label>
@@ -28,5 +21,12 @@
 	  <input type="button" class="btn btn-success" onclick="doInsert()" value="작성"/>
 	  <input type="button" class="btn btn-dark" onclick="clean()" value="취소"/>
 	</form>
+	<div id="listView">
+	<h2></h2>
+	<table class="table table-striped">
+		<thead class="thead-dark"></thead>
+		<tbody></tbody>
+	</table>
+</div>
 </body>
 </html>

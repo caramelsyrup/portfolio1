@@ -1,18 +1,11 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
 <%@ page session="false" %>
-<html>
-<head>
-	<title>Home</title>
-</head>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="/board/resources/boardScript.js"></script>
-<body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
+<h1 class="h1">	Hello world! </h1>
+<h3 class="h3"><span class="badge badge-pill  badge-success">${serverTime}</span></h3>
 <button type="button" class="btn btn-primary" onclick="insert()">추가</button>
 <button type="button" class="btn btn-danger" onclick="getList()">리스트</button>
 

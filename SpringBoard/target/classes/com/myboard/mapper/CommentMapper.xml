@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.myboard.mapper.CommentMapper">
+  	
+  	<insert id="doinsert" parameterType="com.myboard.dto.CommentDTO">
+  		INSERT INTO commentspringboard (cnum,userid,content,regdate,bnum) VALUES (commentspringboard_SEQ.nextval,#{userid},#{content},sysdate,#{bnum})
+  	</insert>
+  	
+  	<select id="getList" resultType="com.myboard.dto.CommentDTO" parameterType="int">
+  		SELECT * FROM commentspringboard WHERE bnum=#{bnum}
+  	</select>
+  	<update id=""></update>
+  	<delete id="delete" parameterType="int">
+  		DELETE FROM commentspringboard WHERE cnum=#{cnum}
+  	</delete>
+  	
+  	<select id="read" parameterType="int" resultType="com.myboard.dto.CommentDTO">
+  		SELECT * FROM commentspringboard WHERE cnum=#{cnum}
+  	</select>
+  	
+  </mapper>

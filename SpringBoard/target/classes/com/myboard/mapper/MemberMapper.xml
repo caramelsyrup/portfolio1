@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.myboard.mapper.MemberMapper">
+  	<!-- ID 중복검사 -->
+  	<select id="idcheck" parameterType="String" resultType="com.myboard.dto.MemberDTO">
+  		SELECT * FROM springmember WHERE id=#{ID}
+  	</select>
+  	<!-- 회원가입 -->
+  	<insert id="insertMember" parameterType="com.myboard.dto.MemberDTO">
+  		INSERT INTO springmember (ID,PASS,NAME,ADDR,MEMO,REG_DATE) VALUES (#{ID},#{PASS},#{NAME},#{ADDR},#{MEMO},SYSDATE)
+  	</insert>
+  	<!-- 주소검색 -->
+  	<select id="address" parameterType="String" resultType="com.myboard.dto.AddressDTO">
+  		SELECT * FROM zipcode WHERE dong LIKE '%'||#{dong}||'%'
+  	</select>
+  	<!-- 로그인 아이디 검색 -->
+  	<select id="login" parameterType="String" resultType="com.myboard.dto.MemberDTO">
+  		SELECT * FROM springmember WHERE ID=#{LID}
+  	</select>
+  	
+  </mapper>

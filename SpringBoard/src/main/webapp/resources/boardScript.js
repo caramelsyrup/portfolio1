@@ -35,9 +35,9 @@ function doInsert(){
 }
 
 // getList 정의
-function getList(field,word){
+function getList(pageNum,field,word){
 	$.get("boardList",
-			{"field":field,"word":word},
+			{"pageNum":pageNum,"field":field,"word":word},
 			function(resp){	// List형 하나의 데이터만 받기에
 				$("#listView h2").html("전체보기");
 				var listHead = "";
@@ -87,6 +87,7 @@ function getView(num){
 
 // 삭제하기
 function delList(num){
+	alert(num);
 	$.get("boardDelete",{"num":num},
 		function(resp){
 			if(resp=="1"){

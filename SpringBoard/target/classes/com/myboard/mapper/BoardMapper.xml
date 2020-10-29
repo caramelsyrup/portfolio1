@@ -3,24 +3,42 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.myboard.mapper.BoardMapper" >
+   	<!-- 검색기능을 위해서 -->
+  	<sql id="search">
+  		<where>
+  			<if test="word!=null and (field eq 'title'.toString())">
+  				title LIKE '%#{word}%'
+  			</if>
+  			<if test="word!=null and (field eq 'writter'.toString())">
+  				writter LIKE '%'||#{word}||'%'
+  			</if>
+  		</where>
+  	</sql>
+  	<!-- 개수 구하기 -->
+  	<select id="getCount" parameterType="com.myboard.util.SearchDTO" resultType="int">
+  		SELECT count(*) FROM springboard <include refid="search"/>
+  	</select>
   	<!-- 추가하기 -->
   	<insert id="insert" parameterType="com.myboard.dto.BoardDTO">
   		INSERT INTO springboard (num,title,content,writter,regdate,hitcount,password) VALUES(springboard_SEQ.nextval,#{title},#{content},#{writter},sysdate,1,#{password})
   	</insert>
-  	<!-- 검색기능을 위해서 -->
-  	<sql id="search">
-  		<where>
-  			<if test="word!=null and (field eq 'num'.toString())">
-  				num LIKE '%'|#{word}|'%'
-  			</if>
-  			<if test="word!=null and (field eq 'writter'.toString())">
-  				writter LIKE '%'||#{writter}||'%'
-  			</if>
-  		</where>
-  	</sql>
+  	
   	<!-- 전체보기 -->
   	<select id="findAll" parameterType="HashMap" resultType="com.myboard.dto.BoardDTO">
   		SELECT * FROM springboard <include refid="search"/> ORDER BY num DESC
+  	</select>
+  	
+  	<!-- 검색기능 전체보기 -->
+  	<select id="listAll" parameterType="com.myboard.util.SearchDTO" resultType="com.myboard.dto.BoardDTO">
+  		SELECT * FROM 
+  		(SELECT /*+INDEX_DESC(
+  			springboard SPRINGBOARD_NUM_PK)*/rownum rn, num, title, content, writter, regdate, hitcount, password, replyCnt FROM springboard WHERE 
+  		<include refid="search"></include>
+	  		<![CDATA[
+	  			rownum <= #{pageNum}*#{amount}
+	  			)
+	  			where rn > (#{pageNum}-1)*#{amount}
+	  		]]>
   	</select>
   	<!-- 상세보기 -->
   	<select id="findByNum" parameterType="Integer" resultType="com.myboard.dto.BoardDTO">
@@ -33,5 +51,9 @@
   	<!-- 수정하기 -->
   	<update id="update" parameterType="com.myboard.dto.BoardDTO">
   		UPDATE springboard SET title=#{title},content=#{content},writter=#{writter},regdate=sysdate,hitcount=#{hitcount},password=#{password} WHERE num=#{num}
+  	</update>
+  	<!-- reply count 1증가 -->
+  	<update id="updateReplyCnt">
+  		UPDATE springboard SET replycnt = replycnt + #{amount} WHERE num = #{bnum}
   	</update>
   </mapper>

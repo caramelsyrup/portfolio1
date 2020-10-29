@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myboard.dto.BoardDTO;
+import com.myboard.util.SearchDTO;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -43,6 +44,18 @@ public class BoardServiceImpl implements BoardService{
 		
 		return dao.dao_delete(num);
 		
+	}
+
+	@Override
+	public List<BoardDTO> listAll(SearchDTO dto) {
+		
+		return dao.dao_listAll(dto);
+	}
+
+	@Override
+	public int getCount(SearchDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.dao_getCount(dto);
 	}
 	
 }
