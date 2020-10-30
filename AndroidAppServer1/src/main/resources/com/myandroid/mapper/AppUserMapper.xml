@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.myandroid.mapper.AppUserMapper">
+ 
+ 	<select id="login" parameterType="String" resultType="com.myandroid.VO.UserVO" >
+ 		SELECT * FROM userInfo WHERE userID = #{userID}
+ 	</select>
+ 	
+ 	<insert id="insert" parameterType="com.myandroid.VO.UserVO">
+ 		INSERT INTO userInfo(userID,password,userName,userAge,userGender,userCity) VALUES (#{userID},#{password},#{userName},#{userAge},#{userGender},#{userCity})
+ 	</insert>
+ 	
+ 	<update id="update" parameterType="com.myandroid.VO.UserVO">
+ 		UPDATE userInfo SET password=#{password},userName=#{userName},userAge=#{userAge},userGender=#{userGender},userCity=#{userCity} WHERE userID=#{userID}
+ 	</update>
+ 	
+ 	<delete id="delete" parameterType="String">
+ 		DELETE FROM userInfo WHERE userID=#{userID}
+ 	</delete>
+ </mapper>
