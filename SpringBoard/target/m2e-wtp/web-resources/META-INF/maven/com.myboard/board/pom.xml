@@ -114,7 +114,6 @@
 		    <artifactId>spring-security-taglibs</artifactId>
 		    <version>5.3.4.RELEASE</version>
 		</dependency>
-				
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 		    <groupId>org.springframework</groupId>

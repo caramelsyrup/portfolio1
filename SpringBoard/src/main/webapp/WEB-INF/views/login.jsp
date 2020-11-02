@@ -30,9 +30,9 @@
 	</div>	 
 	 <div class="container">
 		 <div class="row">
-		  <div class="col-1"> <input class="btn btn-primary" type="button" id="btnLogin" value="로그인"></div>
+		  <div class="col-2"> <input class="btn btn-primary" type="button" id="btnLogin" value="로그인"></div>
 		  <div class="col-1"> <input class="btn btn-secondary" type="reset" value="취소"></div>
-		  <div class="col-1"> <input class="btn btn-secondary" type="button" id="btngoJoin" value="회원가입"></div>
+		  <div class="col-2"> <input class="btn btn-secondary" type="button" id="btngoJoin" value="회원가입"></div>
 		 </div>
 	</div>
 </form>

@@ -44,7 +44,7 @@ public class MemberController {
 	// 회원 로그인
 	@PostMapping("login")
 	@ResponseBody
-	public int login(HttpServletRequest request,@Param("LID") String LID, @Param("LPASS") String LPASS) {
+	public String login(HttpServletRequest request,@Param("LID") String LID, @Param("LPASS") String LPASS) {
 		System.out.println(LID);
 		try {
 			MemberDTO dto = memservice.IDCheck(LID);
@@ -52,15 +52,15 @@ public class MemberController {
 				System.out.println("로그인성공");
 				HttpSession session = request.getSession();
 				session.setAttribute("Member", dto);
-				return 0;
+				return "0";
 			}else {
 				System.out.println("비밀번호 오류");
-				return 1;
+				return "1";
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-			return -2;
+			return "-2";
 		}
 			
 	}

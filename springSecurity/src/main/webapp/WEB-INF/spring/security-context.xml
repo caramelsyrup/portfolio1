@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 해당 유저가 권한있는 유저인지 판단. 유저별 권한 배분. 비밀번호 암호화 -->
+	<!-- 스프링에서 권장하는 비밀번호 해시.  -->
+	<bean id="customLoginSuccess" class="com.myspring.security.domain.CustomLoginSuccessHandler"></bean>
+	<bean id="bcyptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<!--  유저 관련 객체 생성 -->
+	<bean id="customUserDetailService" class="com.myspring.security.domain.CustomUserDetailService"></bean>
+	
+	<!-- form-login에 적지 않으면, 스프링이 만든 로그인페이지로 이동 -->
+	<security:http>
+		<!-- 모든사람이 접근할 수 있도록 유도 -->
+		<security:intercept-url pattern="/sample/all" access="permitAll"/>
+		<!-- 멤버권한을 가진자만  -->
+		<!-- <security:intercept-url pattern="/sample/member" access="hasRole{ROLE_MEMBER}"/>
+		<security:intercept-url pattern="/sample/admin" access="hasRole{ROLE_ADMIN}"/> -->
+		<security:form-login login-page="/customLogin" authentication-success-handler-ref="customLoginSuccess"/>
+		<security:csrf disabled="true"/>
+	</security:http>
+	
+	<!-- 유저관련 객체를 참조하고, 비밀번호는 위의 해시방법 이용 -->
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailService">
+			<security:password-encoder ref="bcyptPasswordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>

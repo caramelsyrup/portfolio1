@@ -117,18 +117,17 @@ $(document).ready(function(){
 			return false;
 		}
 		/*$("#loginForm").submit();*/
-		
-		$.ajax({
-			type:"post",
-			url:"/board/member/login",
-			data:{"LID":Lid,"LPASS":Lpass}
-		})
-		.done(function(resp){
-			alert('성공'+resp);
-		})
-		.fail(function(error){
-			alert('실패'+error);
-		});
+		$.post("/board/sboardList",
+				{},
+				function(){
+					
+				}
+				);
+	});
+	
+	// 회원가입 버튼
+	$("#btngoJoin").on("click",function(){
+		location.href="member/insertUser";
 	});
 	
 });	// document
