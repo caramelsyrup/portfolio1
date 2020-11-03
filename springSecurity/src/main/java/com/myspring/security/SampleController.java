@@ -17,4 +17,10 @@ public class SampleController {
 		log.info("logined member");
 	}
 	
+	@GetMapping("/customLogout")
+	public void outMember() {
+		log.info("logout member");
+	}
+	
+	
 }

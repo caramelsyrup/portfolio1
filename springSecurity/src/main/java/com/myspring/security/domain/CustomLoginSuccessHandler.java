@@ -17,6 +17,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 	
+	// 객체를 자동 주입.
 	@Autowired
 	private PasswordEncoder passowrdencoder;
 	

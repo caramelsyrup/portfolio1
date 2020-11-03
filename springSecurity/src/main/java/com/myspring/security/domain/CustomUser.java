@@ -19,7 +19,9 @@ public class CustomUser extends User{
 	}
 
 	public CustomUser(MemberDTO vo) {
-		super(vo.getUSERID(),vo.getUSERPW(), vo.getAuthList().stream()
+		super(vo.getUSERID(),
+				vo.getUSERPW(), 
+				vo.getAuthList().stream()
 				.map(auth -> new SimpleGrantedAuthority(auth.getAUTH())).collect(Collectors.toList())
 			 );
 		this.member = vo;
@@ -32,8 +34,6 @@ public class CustomUser extends User{
 	public void setMember(MemberDTO member) {
 		this.member = member;
 	}
-	
-	
 	
 
 }

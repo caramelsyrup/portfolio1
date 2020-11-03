@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>admin접속자 페이지</h2>
+<h1>로그아웃페이지</h1>
+
+<form action="/security/customLogout" method="post">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+	<button>로그아웃</button>
+</form>
+
 </body>
 </html>

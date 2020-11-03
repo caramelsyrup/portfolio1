@@ -95,13 +95,13 @@ public class MemberTest {
 				
 				if(i<80) {
 					pstmt.setString(1,"user"+i);
-					pstmt.setString(2, "ROLE_USER"+i);
+					pstmt.setString(2, "ROLE_USER");
 				}else if(i<90) {
 					pstmt.setString(1,"manager"+i);
-					pstmt.setString(2, "ROLE_MEMBER"+i);
+					pstmt.setString(2, "ROLE_MEMBER");
 				}else {
 					pstmt.setString(1,"admin"+i);
-					pstmt.setString(2, "ROLE_ADMIN"+i);
+					pstmt.setString(2, "ROLE_ADMIN");
 				}
 				
 				pstmt.executeUpdate();
